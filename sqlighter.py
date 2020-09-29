@@ -23,3 +23,9 @@ class SQLighter:
         with self.connection:
             return self.cursor.execute("INSERT INTO 'subscriptions' ('user_id', 'status') VALUES (?,?)", (user_id, status))
 
+    def update_subscription(self, user_id, status):
+        """обновляем статус подписки"""
+        return self.cursor.execute("UPDATE 'subscriptions' SET 'status' = ? WHERE 'user_id' = ?", (user_id, status))
+    def close(self):
+        """закрываем соединение с БД"""
+        self.connection.close()
