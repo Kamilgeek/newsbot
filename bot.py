@@ -39,10 +39,10 @@ async def unsubscribe(message:types.Message):
         # если он уже есть то просто обновляем ему статус подписки
         db.update_subscription(message.from_user.id, False)
 
+
     await message.answer("Вы успешно отписаны от рассылки.")
 
-
-
+# РАЗОБРАТЬСЯ С ОШИБКОЙ НАСТРОЙКИ БД
 
 
 if __name__ == '__main__':
